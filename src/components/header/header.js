@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
+import Nav from './sideNav/sideNav';
 
 export default class Header extends Component {
 
@@ -20,6 +21,7 @@ export default class Header extends Component {
                         }}
                     />
                 </div>
+                <Nav showNav={this.state.showNav} />
                 <Link to="/" className="logo">
                     The Book Shelf
                 </Link>
