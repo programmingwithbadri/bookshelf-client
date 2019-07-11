@@ -15,9 +15,9 @@ import rootReducer from './reducers';
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore)
 
 ReactDOM.render(
-    <Provider store = {createStoreWithMiddleware(rootReducer)}>
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
         <BrowserRouter>
             <Routes />
         </BrowserRouter>
     </Provider>
-, document.getElementById('root'));
+    , document.getElementById('root'));
