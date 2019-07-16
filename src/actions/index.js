@@ -4,7 +4,7 @@ export function getBooks(
     limit = 10,
     start = 0,
     order = 'asc',
-    list: ''
+    list
 ) {
     const request = axios.get(`http://localhost:3001/api/books/?skip=${start}&limit=${limit}&order=${order}`)
         .then(response => {
@@ -47,11 +47,25 @@ export function getBookById(bookId) {
 }
 
 export function clearBookWithId() {
+
     return {
         type: 'CLEAR_BOOK_WITH_REVIEWER',
         payload: {
             book: {},
             reviewer: {}
         }
+    }
+}
+
+
+//---------------------USER ACTIONS------------------
+
+export function loginUser({ email, password }) {
+    const request = axios.post(`http://localhost:3001/api/login`, { email, password })
+        .then((response) => response.data)
+
+    return {
+        type: 'USER_LOGIN',
+        payload: request
     }
 }
