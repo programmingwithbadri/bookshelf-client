@@ -1,17 +1,16 @@
 body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
 a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
-a:active,
-a:visited,
-a:focus {
-    color:black
+
+a:active, a:visited, a:focus {
+    color: black
 }
 
 .red_tag {
@@ -37,26 +36,25 @@ header .logo {
 
 header .open_nav {
     position: absolute;
-    left:0px;
+    left: 0px;
 }
-
 
 header .navItem {
     font-weight: 300;
     font-size: 12px;
-    color:#bababa;
-    padding:10px;
+    color: #bababa;
+    padding: 10px;
     border-top: 1px solid #404040;
 }
 
 header .navItem a {
-    color:inherit;
+    color: inherit;
     text-decoration: none;
 }
 
 header .navItem span {
-    color:white;
-    margin-right:10px;
+    color: white;
+    margin-right: 10px;
 }
 
 .book_item {
@@ -73,7 +71,6 @@ header .navItem span {
     margin: 4px 0px 0px 0px;
     font-weight: 300;
 }
-
 
 .book_item .book_bubble {
     background: #E91E63;
@@ -96,12 +93,13 @@ header .navItem span {
 }
 
 .book_item .book_items {
-    font-size:13px;
+    font-size: 13px;
 }
 
-.book_item .book_items strong { 
+.book_item .book_items strong {
     color: #ffffff;
 }
+
 .book_item .book_items div {
     margin-bottom: 8px;
 }
@@ -128,7 +126,6 @@ header .navItem span {
     margin-top: 20px;
 }
 
-
 .rl_container h2 {
     font-size: 33px;
     font-weight: 300;
@@ -145,6 +142,7 @@ header .navItem span {
     font-weight: 300;
     width: 260px;
 }
+
 .rl_container.article input {
     width: 80%;
 }
@@ -159,6 +157,7 @@ header .navItem span {
     margin-top: 20px;
     font-size: 14px;
 }
+
 .rl_container.article select {
     width: 80%;
     background: #f7f7f7;
@@ -177,6 +176,7 @@ header .navItem span {
     margin-top: 20px;
     width: 260px;
 }
+
 .rl_container.article button {
     width: 80%;
 }
@@ -216,69 +216,82 @@ header .navItem span {
     display: inline-block;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
     color: #d8d8d8;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
     color: #d8d8d8;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
     color: #d8d8d8;
-  }
-  :-moz-placeholder { /* Firefox 18- */
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
     color: #d8d8d8;
-  }
+}
 
 /*=============================
             USER
 ===============================*/
-    .user_posts {
-        padding:10px;
-        box-sizing: border-box;
-    }
 
-    .edit_confirm {
-        background: #8BC34A;
-        color: #fff;
-        padding: 10px 0px;
-    }
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+.user_posts {
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
+.edit_confirm {
+    background: #8BC34A;
+    color: #fff;
+    padding: 10px 0px;
+}
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-  .user_container .avatar {
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.user_container .avatar {
     text-align: center;
     margin-top: 30px;
-  }
-  .user_container .avatar img {
+}
+
+.user_container .avatar img {
     width: 200px;
-  }
-  .user_container .nfo{
+}
+
+.user_container .nfo {
     box-sizing: border-box;
-    padding:20px;
-  }
-  .user_container .nfo div {
+    padding: 20px;
+}
+
+.user_container .nfo div {
     font-size: 23px;
     font-weight: 300;
     margin-bottom: 10px;
     color: #a4a4a4;
-  }
-  .user_container .nfo div span { 
+}
+
+.user_container .nfo div span {
     font-weight: 500;
     color: #02bcd4;
-  }
+}
 
 /*=============================
             POST
@@ -286,7 +299,7 @@ header .navItem span {
 
 .br_container {
     box-sizing: border-box;
-    padding:20px;
+    padding: 20px;
 }
 
 .br_container .br_header {
@@ -294,12 +307,13 @@ header .navItem span {
     margin-bottom: 20px;
 }
 
-.br_container .br_header h2{
+.br_container .br_header h2 {
     font-weight: 300;
     font-size: 38px;
     margin: 0px;
 }
-.br_container .br_header h5{
+
+.br_container .br_header h5 {
     margin: 5px 0px;
     font-size: 31px;
     color: #02bcd4;
@@ -309,6 +323,7 @@ header .navItem span {
     font-size: 12px;
     margin-bottom: 10px;
 }
+
 .br_container .br_header .br_reviewer span {
     font-weight: 500;
 }
@@ -335,11 +350,13 @@ header .navItem span {
     font-weight: 300;
     font-size: 20px;
 }
+
 .br_container .br_box .left div {
     padding: 7px;
     box-sizing: border-box;
 }
-.br_container .br_box .left div span { 
+
+.br_container .br_box .left div span {
     font-weight: 700
 }
 
@@ -349,16 +366,17 @@ header .navItem span {
     background: #3c3c3c;
     color: #fff;
     font-weight: 700;
-    padding: 21px 15px;
+    padding: 12px 15px;
     box-sizing: border-box;
     text-align: center;
 }
+
 .br_container .br_box .right div {
     font-size: 40px;
     font-weight: 300;
 }
 
-.logout_container h1{
+.logout_container h1 {
     color: #02bcd4;
     font-size: 30px;
     font-weight: 300;
@@ -370,71 +388,73 @@ header .navItem span {
             LOADER
 ===============================*/
 
-
-.loader,
-.loader:before,
-.loader:after {
-  border-radius: 50%;
+.loader, .loader:before, .loader:after {
+    border-radius: 50%;
 }
+
 .loader {
     color: #ebebeb;
-  font-size: 11px;
-  text-indent: -99999em;
-  margin: 55px auto;
-  position: relative;
-  width: 10em;
-  height: 10em;
-  box-shadow: inset 0 0 0 1em;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+    font-size: 11px;
+    text-indent: -99999em;
+    margin: 55px auto;
+    position: relative;
+    width: 10em;
+    height: 10em;
+    box-shadow: inset 0 0 0 1em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
 }
-.loader:before,
-.loader:after {
-  position: absolute;
-  content: '';
+
+.loader:before, .loader:after {
+    position: absolute;
+    content: '';
 }
+
 .loader:before {
-  width: 5.2em;
-  height: 10.2em;
-  background: #ffffff;
-  border-radius: 10.2em 0 0 10.2em;
-  top: -0.1em;
-  left: -0.1em;
-  -webkit-transform-origin: 5.2em 5.1em;
-  transform-origin: 5.2em 5.1em;
-  -webkit-animation: load2 2s infinite ease 1.5s;
-  animation: load2 2s infinite ease 1.5s;
+    width: 5.2em;
+    height: 10.2em;
+    background: #ffffff;
+    border-radius: 10.2em 0 0 10.2em;
+    top: -0.1em;
+    left: -0.1em;
+    -webkit-transform-origin: 5.2em 5.1em;
+    transform-origin: 5.2em 5.1em;
+    -webkit-animation: load2 2s infinite ease 1.5s;
+    animation: load2 2s infinite ease 1.5s;
 }
+
 .loader:after {
-  width: 5.2em;
-  height: 10.2em;
-  background: #ffffff;
-  border-radius: 0 10.2em 10.2em 0;
-  top: -0.1em;
-  left: 5.1em;
-  -webkit-transform-origin: 0px 5.1em;
-  transform-origin: 0px 5.1em;
-  -webkit-animation: load2 2s infinite ease;
-  animation: load2 2s infinite ease;
+    width: 5.2em;
+    height: 10.2em;
+    background: #ffffff;
+    border-radius: 0 10.2em 10.2em 0;
+    top: -0.1em;
+    left: 5.1em;
+    -webkit-transform-origin: 0px 5.1em;
+    transform-origin: 0px 5.1em;
+    -webkit-animation: load2 2s infinite ease;
+    animation: load2 2s infinite ease;
 }
+
 @-webkit-keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
+
 @keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
