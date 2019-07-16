@@ -63,6 +63,7 @@ export function clearBookWithId() {
 export function loginUser({ email, password }) {
     const request = axios.post(`http://localhost:3001/api/login`, { email, password })
         .then((response) => response.data)
+        .catch(error => error.response.data)
 
     return {
         type: 'USER_LOGIN',
