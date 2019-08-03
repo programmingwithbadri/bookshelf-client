@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { addBooks } from '../../actions';
-
+import { Link } from 'react-router-dom';
 class AddBooks extends Component {
     state = {
         formdata: {
@@ -31,6 +31,17 @@ class AddBooks extends Component {
             ownerId: this.props.user.login.id
         }))
     }
+
+    showNewBook = (book) => (
+        book.post ?
+            <div className="conf_link">
+                Cool!
+                <Link to={`/books/${book.bookId}`}>
+                    Click to see the post
+                </Link>
+            </div>
+            : null
+    )
 
     render() {
         return (
@@ -88,6 +99,11 @@ class AddBooks extends Component {
                         />
                     </div>
                     <button type="submit">Add Review</button>
+                    {
+                        this.props.books.newBook ?
+                            this.showNewBook(this.props.books.newBook)
+                            : null
+                    }
                 </form>
             </div>
         )
