@@ -1,5 +1,16 @@
 import axios from 'axios';
 
+export function addBooks(book) {
+    const request = axios.post(`http://localhost:3001/api/book`, book)
+        .then(response => response.data);
+
+    return {
+        type: 'ADD_BOOKS',
+        payload: request
+    }
+
+}
+
 export function getBooks(
     limit = 10,
     start = 0,
@@ -72,8 +83,8 @@ export function loginUser({ email, password }) {
 
 export function auth() {
     const request = axios.get(`http://localhost:3001/api/auth`)
-    .then(response => response.data)
-    .catch(error => error.response.data)
+        .then(response => response.data)
+        .catch(error => error.response.data)
     return {
         type: 'USER_AUTH',
         payload: request

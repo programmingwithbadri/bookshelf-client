@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { addBooks } from '../../actions';
 
-export default class AddBooks extends Component {
-
+class AddBooks extends Component {
     state = {
         formdata: {
             name: '',
@@ -25,6 +26,10 @@ export default class AddBooks extends Component {
 
     onSubmitForm = (e) => {
         e.preventDefault();
+        this.props.dispatch(addBooks({
+            ...this.state.formdata,
+            ownerId: this.props.user.login.id
+        }))
     }
 
     render() {
@@ -88,3 +93,11 @@ export default class AddBooks extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        books: state.books
+    }
+}
+
+export default connect(mapStateToProps)(AddBooks)
