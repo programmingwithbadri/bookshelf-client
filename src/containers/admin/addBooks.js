@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { addBooks } from '../../actions';
+import { addBooks, clearNewBook } from '../../actions';
 import { Link } from 'react-router-dom';
 class AddBooks extends Component {
     state = {
@@ -42,6 +42,10 @@ class AddBooks extends Component {
             </div>
             : null
     )
+
+    componentWillUnmount() {
+        this.props.dispatch(clearNewBook())
+    }
 
     render() {
         return (

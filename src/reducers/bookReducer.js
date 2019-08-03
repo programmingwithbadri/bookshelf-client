@@ -10,6 +10,7 @@ export default function (state = {}, action) {
                 reviewer: action.payload.reviewer
             }
         case 'ADD_BOOKS':
+        case 'CLEAR_NEWBOOK':
             return { ...state, newBook: action.payload }
         default:
             return state;

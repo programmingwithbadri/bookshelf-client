@@ -8,7 +8,6 @@ export function addBooks(book) {
         type: 'ADD_BOOKS',
         payload: request
     }
-
 }
 
 export function getBooks(
@@ -57,8 +56,14 @@ export function getBookById(bookId) {
     }
 }
 
-export function clearBookWithId() {
+export function clearNewBook() {
+    return {
+        type: 'CLEAR_NEWBOOK',
+        payload: {}
+    }
+}
 
+export function clearBookWithId() {
     return {
         type: 'CLEAR_BOOK_WITH_REVIEWER',
         payload: {
