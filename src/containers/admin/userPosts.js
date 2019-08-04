@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 class UserPosts extends Component {
 
@@ -13,7 +14,9 @@ class UserPosts extends Component {
         user.userPosts ?
             user.userPosts.map(item =>
                 <tr key={item._id}>
-                    <td>{item.name}</td>
+                    <td>
+                        <Link to={{ pathname: `/user/edit/${item._id}`, state: item }}>{item.name}</Link>
+                    </td>
                     <td>{item.author}</td>
                     <td>{moment(item.createdAt).format("DD/MM/YY")}</td>
                 </tr>
