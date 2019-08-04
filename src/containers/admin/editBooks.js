@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux';
+import { updateBook } from '../../actions';
 
 class EditBooks extends PureComponent {
 
@@ -24,7 +25,7 @@ class EditBooks extends PureComponent {
 
     onSubmitForm = (e) => {
         e.preventDefault();
-
+        this.props.dispatch(updateBook(this.state.formdata))
     }
 
     render() {

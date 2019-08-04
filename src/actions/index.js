@@ -73,6 +73,16 @@ export function clearBookWithId() {
     }
 }
 
+export function updateBook(data) {
+    const request = axios.put(`http://localhost:3001/api/updateBook`, data)
+        .then(response => response.data);
+
+    return {
+        type: 'UPDATE_BOOK',
+        payload: request
+    }
+}
+
 
 //---------------------USER ACTIONS------------------
 
@@ -104,5 +114,4 @@ export function getPosts(userId) {
         type: 'GET_USER_POSTS',
         payload: request
     }
-
 }
