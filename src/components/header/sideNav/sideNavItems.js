@@ -37,7 +37,7 @@ const SideNavItems = () => {
             type: 'navItem',
             link: '/user/reviews',
             icon: 'file-text-o',
-            text: 'Add Admins',
+            text: 'My Reviews',
             restricted: false
         },
         {

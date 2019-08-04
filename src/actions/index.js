@@ -95,3 +95,14 @@ export function auth() {
         payload: request
     }
 }
+
+export function getPosts(userId) {
+    const request = axios.get(`http://localhost:3001/api/userPosts/?userId=${userId}`)
+        .then(response => response.data);
+
+    return {
+        type: 'GET_USER_POSTS',
+        payload: request
+    }
+
+}
