@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux';
 import { updateBook } from '../../actions';
+import { Link } from 'react-router-dom';
 
 class EditBooks extends PureComponent {
 
@@ -29,9 +30,18 @@ class EditBooks extends PureComponent {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.props)
+        let books = this.props.books;
         return (
             <div className="rl_container article">
+                {
+                    books.isBookUpdated ?
+                        <div className="edit_confirm">
+                            Posts Updated.
+                            <Link to={`/books/${books.book._id}`}> CLick the link to review </Link>
+                        </div>
+                        : null
+                }
                 <form onSubmit={this.onSubmitForm}>
                     <h2> Edit the Review</h2>
                     <div className="form_element">
@@ -86,7 +96,8 @@ class EditBooks extends PureComponent {
                     </div>
                     <button type="submit">Edit Review</button>
                     <div className="delete_post">
-                        <div className="button">
+                        <div className="button"
+                            onClick={this.deletePost}>
                             Delete Review
                         </div>
 
