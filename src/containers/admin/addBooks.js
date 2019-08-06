@@ -10,7 +10,7 @@ class AddBooks extends Component {
             review: '',
             pages: '',
             price: '',
-            rating: ''
+            rating: 1
         }
     }
 

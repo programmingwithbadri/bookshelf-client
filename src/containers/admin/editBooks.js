@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux';
-import { updateBook } from '../../actions';
+import { updateBook, deleteBook, clearBook } from '../../actions';
 import { Link } from 'react-router-dom';
 
 class EditBooks extends PureComponent {
@@ -29,6 +29,20 @@ class EditBooks extends PureComponent {
         this.props.dispatch(updateBook(this.state.formdata))
     }
 
+    deletePost = () => {
+        this.props.dispatch(deleteBook(this.props.match.params.id))
+    }
+
+    redirectUser = () => {
+        setTimeout(() => {
+            this.props.history.push('/user/reviews')
+        }, 1000)
+    }
+
+    componentWillUnmount() {
+        this.props.dispatch(clearBook())
+    }
+
     render() {
         console.log(this.props)
         let books = this.props.books;
@@ -39,6 +53,14 @@ class EditBooks extends PureComponent {
                         <div className="edit_confirm">
                             Posts Updated.
                             <Link to={`/books/${books.book._id}`}> CLick the link to review </Link>
+                        </div>
+                        : null
+                }
+                {
+                    books.isBookDeleted ?
+                        <div className="red_tag">
+                            Posts Deleted.
+                         {this.redirectUser()}
                         </div>
                         : null
                 }

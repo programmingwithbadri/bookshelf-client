@@ -18,6 +18,18 @@ export default function (state = {}, action) {
                 isBookUpdated: action.payload.success,
                 book: action.payload.doc
             }
+        case 'DELETE_BOOK':
+            return {
+                ...state,
+                isBookDeleted: action.payload.success
+            }
+        case 'CLEAR_BOOK':
+            return {
+                ...state,
+                book: action.payload.book,
+                isBookUpdated: action.payload.isBookUpdated,
+                isBookDeleted: action.payload.isBookDeleted
+            }
         default:
             return state;
     }

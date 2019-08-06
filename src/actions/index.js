@@ -83,6 +83,27 @@ export function updateBook(data) {
     }
 }
 
+export function deleteBook(bookId) {
+    const request = axios.delete(`http://localhost:3001/api/deleteBook/?id=${bookId}`)
+        .then(response => response.data);
+
+    return {
+        type: 'DELETE_BOOK',
+        payload: request
+    }
+}
+
+export function clearBook() {
+    return {
+        type: 'CLEAR_BOOK',
+        payload: {
+            book: null,
+            isUpdated: false,
+            isDeleted: false
+        }
+    }
+}
+
 
 //---------------------USER ACTIONS------------------
 
