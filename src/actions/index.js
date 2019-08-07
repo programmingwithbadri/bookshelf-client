@@ -136,3 +136,13 @@ export function getPosts(userId) {
         payload: request
     }
 }
+
+export function getUsers() {
+    const request = axios.get(`http://localhost:3001/api/users`)
+        .then(response => response.data);
+
+    return {
+        type: 'GET_USERS',
+        payload: request
+    }
+}
