@@ -1,8 +1,9 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const SideNavItems = () => {
+const SideNavItems = ({ user }) => {
 
     const items = [
         {
@@ -17,42 +18,43 @@ const SideNavItems = () => {
             link: '/user',
             icon: 'file-text-o',
             text: 'My Profile',
-            restricted: false
+            restricted: true
         },
         {
             type: 'navItem',
             link: '/user/register',
             icon: 'file-text-o',
             text: 'Add Admins',
-            restricted: false
+            restricted: true
         },
         {
             type: 'navItem',
             link: '/login',
             icon: 'fa fa-sign-in',
             text: 'Login',
-            restricted: false
+            restricted: false,
+            exclude: true
         },
         {
             type: 'navItem',
             link: '/user/reviews',
             icon: 'file-text-o',
             text: 'My Reviews',
-            restricted: false
+            restricted: true
         },
         {
             type: 'navItem',
             link: '/user/add',
             icon: 'file-text-o',
             text: 'Add Reviews',
-            restricted: false
+            restricted: true
         },
         {
             type: 'navItem',
             link: '/user/logout',
             icon: 'fa fa-sign-out',
             text: 'Logout',
-            restricted: false
+            restricted: true
         }
     ]
 
@@ -66,9 +68,19 @@ const SideNavItems = () => {
     )
 
     const showItems = () => (
-        items.map((item, i) => {
-            return element(item, i)
-        })
+        user.login ?
+            items.map((item, i) => {
+                if (user.login.isAuth) {
+                    return !item.exclude ?
+                        element(item, i)
+                        : null
+                } else {
+                    return !item.restricted ?
+                        element(item, i)
+                        : null
+                }
+            })
+            : null
     )
     return (
         <div>
@@ -77,4 +89,10 @@ const SideNavItems = () => {
     )
 }
 
-export default SideNavItems
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(SideNavItems);
