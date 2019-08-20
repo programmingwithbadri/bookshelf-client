@@ -1,5 +1,5 @@
 import axios from 'axios';
-import serverUrl from '../../config';
+import serverUrl from '../config';
 
 export function addBooks(book) {
     const request = axios.post(`${serverUrl}/api/book`, book)

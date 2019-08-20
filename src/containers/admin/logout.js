@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import serverUrl from '../../../config';
+import serverUrl from '../../config';
 
 const LogOut = (props) => {
     axios.get(`${serverUrl}/api/logout`)
