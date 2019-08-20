@@ -1,7 +1,8 @@
 import axios from 'axios';
+import serverUrl from '../../config';
 
 export function addBooks(book) {
-    const request = axios.post(`http://localhost:3001/api/book`, book)
+    const request = axios.post(`${serverUrl}/api/book`, book)
         .then(response => response.data);
 
     return {
@@ -16,7 +17,7 @@ export function getBooks(
     order = 'asc',
     list
 ) {
-    const request = axios.get(`http://localhost:3001/api/books/?skip=${start}&limit=${limit}&order=${order}`)
+    const request = axios.get(`${serverUrl}/api/books/?skip=${start}&limit=${limit}&order=${order}`)
         .then(response => {
             if (list) {
                 return [...list, ...response.data]
@@ -32,14 +33,14 @@ export function getBooks(
 }
 
 export function getBookById(bookId) {
-    const request = axios.get(`http://localhost:3001/api/book?id=${bookId}`)
+    const request = axios.get(`${serverUrl}/api/book?id=${bookId}`)
 
     // Using redux thunk to return a function insteada of an action
     return (dispatch) => {
         request.then(({ data }) => {
             const book = data;
 
-            axios.get(`http://localhost:3001/api/user?id=${book.ownerId}`)
+            axios.get(`${serverUrl}/api/user?id=${book.ownerId}`)
                 .then(({ data }) => {
 
                     const response = {
@@ -74,7 +75,7 @@ export function clearBookWithId() {
 }
 
 export function updateBook(data) {
-    const request = axios.put(`http://localhost:3001/api/updateBook`, data)
+    const request = axios.put(`${serverUrl}/api/updateBook`, data)
         .then(response => response.data);
 
     return {
@@ -84,7 +85,7 @@ export function updateBook(data) {
 }
 
 export function deleteBook(bookId) {
-    const request = axios.delete(`http://localhost:3001/api/deleteBook/?id=${bookId}`)
+    const request = axios.delete(`${serverUrl}/api/deleteBook/?id=${bookId}`)
         .then(response => response.data);
 
     return {
@@ -108,7 +109,7 @@ export function clearBook() {
 //---------------------USER ACTIONS------------------
 
 export function loginUser({ email, password }) {
-    const request = axios.post(`http://localhost:3001/api/login`, { email, password })
+    const request = axios.post(`${serverUrl}/api/login`, { email, password })
         .then((response) => response.data)
         .catch(error => error.response.data)
     return {
@@ -118,7 +119,7 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-    const request = axios.get(`http://localhost:3001/api/auth`)
+    const request = axios.get(`${serverUrl}/api/auth`)
         .then(response => response.data)
         .catch(error => error.response.data)
     return {
@@ -128,7 +129,7 @@ export function auth() {
 }
 
 export function getPosts(userId) {
-    const request = axios.get(`http://localhost:3001/api/userPosts/?userId=${userId}`)
+    const request = axios.get(`${serverUrl}/api/userPosts/?userId=${userId}`)
         .then(response => response.data);
 
     return {
@@ -138,7 +139,7 @@ export function getPosts(userId) {
 }
 
 export function getUsers() {
-    const request = axios.get(`http://localhost:3001/api/users`)
+    const request = axios.get(`${serverUrl}/api/users`)
         .then(response => response.data);
 
     return {
@@ -148,7 +149,7 @@ export function getUsers() {
 }
 
 export function registerUser(user, userList) {
-    const request = axios.post(`http://localhost:3001/api/register`, user)
+    const request = axios.post(`${serverUrl}/api/register`, user)
 
     return (dispatch) => {
         request.then(({ data }) => {

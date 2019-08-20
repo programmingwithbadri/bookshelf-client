@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios';
+import serverUrl from '../../../config';
 
 const LogOut = (props) => {
-    axios.get('http://localhost:3001/api/logout')
+    axios.get(`${serverUrl}/api/logout`)
         .then(() => {
             setTimeout(() =>
                 props.history.push('/'), 2000)
