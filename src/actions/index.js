@@ -109,7 +109,7 @@ export function clearBook() {
 //---------------------USER ACTIONS------------------
 
 export function loginUser({ email, password }) {
-    const request = axios.post(`${serverUrl}/api/login`, { email, password })
+    const request = axios.post(`${serverUrl}/api/login`, { email, password }, {withCredentials: true}) // withCredentials - Get/Set the cookie while sending request/receiving response
         .then((response) => response.data)
         .catch(error => error.response.data)
     return {
@@ -119,7 +119,7 @@ export function loginUser({ email, password }) {
 }
 
 export function auth() {
-    const request = axios.get(`${serverUrl}/api/auth`)
+    const request = axios.get(`${serverUrl}/api/auth`, {withCredentials: true})
         .then(response => response.data)
         .catch(error => error.response.data)
     return {
